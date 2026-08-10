@@ -2,27 +2,19 @@ package main
 
 import (
 	"fmt"
-	"math/big"
 )
 
-func factorial(n int64) *big.Int {
-	// Initialize result as a big.Int with a starting value of 1
-	result := big.NewInt(1)
-
-	// Loop up to n
-	for i := int64(1); i <= n; i++ {
-		// Convert the loop index 'i' into a temporary big.Int
-		bigI := big.NewInt(i)
-
-		// Multiply: result = result * bigI
-		result.Mul(result, bigI)
+func factorial(n int) int {
+	if n == 1 || n == 0 {
+		return 1
 	}
 
-	return result
+	return n * factorial(n-1)
+
 }
 
 func main() {
-	var num int64
+	var num int
 	fmt.Println("Enter the number:")
 	fmt.Scan(&num)
 
