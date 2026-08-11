@@ -39,6 +39,8 @@ func Calculate(course []Courses, n int, total int) {
 			result += 3 * c
 		}
 	}
+	if total != 0 {
+		fmt.Println("Your grade is", result/total)
+	}
 
-	fmt.Println("Your grade is", result/total)
 }
