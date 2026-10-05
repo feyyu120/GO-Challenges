@@ -14,6 +14,7 @@ func main() {
 	if scan.Scan() {
 		sentence = scan.Text()
 	}
+	sentence = strings.ToLower(sentence)
 	holder := strings.Fields(sentence)
 	dict := map[string]int{}
 	for _, value := range holder {
